@@ -1,0 +1,20 @@
+{
+    "name": "yazamut_boys",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "server:install": "cd server && npm install",
+        "client:install": "cd client/tamalReferantsService && npm install",
+        "client:start": "cd client/ && npm run start",
+        "server:start": "cd server/ && npm run start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://odedlevy@bitbucket.org/razorgripsolutions/tamal_crm_pro.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/razorgripsolutions/tamal_crm_pro#readme",
+    "devDependencies": {}
+}

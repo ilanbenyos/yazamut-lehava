@@ -1,0 +1,3 @@
+here will come all info about the proj like:
+1. urls, usernames, passwords
+2. how to install and activate

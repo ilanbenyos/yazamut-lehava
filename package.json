@@ -9,12 +9,10 @@
         "server:start": "cd server/ && npm run start"
     },
     "repository": {
-        "type": "git",
-        "url": "git+https://odedlevy@bitbucket.org/razorgripsolutions/tamal_crm_pro.git"
+        "type": "git"
     },
     "keywords": [],
-    "author": "",
+    "author": "ilan@razorgrip.com",
     "license": "ISC",
-    "homepage": "https://bitbucket.org/razorgripsolutions/tamal_crm_pro#readme",
     "devDependencies": {}
 }

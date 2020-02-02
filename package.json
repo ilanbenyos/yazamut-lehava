@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "server:install": "cd server && npm install",
-        "client:install": "cd client/tamalReferantsService && npm install",
+        "client:install": "cd client/ && npm install",
         "client:start": "cd client/ && npm run start",
         "server:start": "cd server/ && npm run start"
     },

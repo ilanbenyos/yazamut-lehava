@@ -4,7 +4,7 @@ var router = express.Router();
 let arr = [1,2,3,4,5,6,7,8,]
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('Hi From Server!');
 });
 
 router.get('/:id', function(req, res, next) {

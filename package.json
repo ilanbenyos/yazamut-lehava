@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "install:all": "npm run server:install && npm run client:install",
         "server:install": "cd server && npm install",
         "client:install": "cd client/ && npm install",
         "client:start": "cd client/ && npm run start",
@@ -14,5 +15,12 @@
     "keywords": [],
     "author": "ilan@razorgrip.com",
     "license": "ISC",
-    "devDependencies": {}
+    "devDependencies": {
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2"
+    },
+    "dependencies": {
+        "primeicons": "^2.0.0",
+        "primevue": "^1.0.2"
+    }
 }

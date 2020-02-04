@@ -4,6 +4,11 @@
  * Module dependencies.
  */
 
+require("@babel/register")({
+  presets: ["@babel/preset-env"]
+});
+
+
 var app = require('../app');
 
 var debug = require('debug')('server:server');

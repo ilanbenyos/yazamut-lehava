@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <homePage msg="ברוכים הבאים לאתר יזמות להבה"/>
+    <homePage msg="ברוכים הבאים לאתר יזמות אמית 2020"/>
   </div>
 </template>
 

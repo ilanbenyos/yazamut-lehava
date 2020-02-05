@@ -29,7 +29,8 @@ import axios from 'axios';
 export default {
   name: 'home',
   props: {
-    msg: String
+    msg: String,
+    default:'ברוכים הבאים לאתר יזמות אמית 2020'
   },
   data(){
     return{
@@ -47,17 +48,17 @@ export default {
   methods:{
     async send(){
       let res = await axios.get()
-        console.log('data',res.data);
-        this.msg2 = res.data
+        console.log('data',res);
+        this.msg2 = res
     },
     async checkItem(){
       let res = await axios.get('/is_valid/'+ this.item)
-      console.log(res.data);
-      this.msg2 = res.data.bool
+      console.log(res);
+      this.msg2 = res.bool
     },
     async saveUser(){
       let res = await axios.post('/saveUser',this.userData)
-        console.log('userData',res.data);
+        console.log('userData',res);
         this.userData = res;
     },
   }

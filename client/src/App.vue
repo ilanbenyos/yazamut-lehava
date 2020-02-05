@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <homePage msg="ברוכים הבאים לאתר יזמות אמית 2020"/>
+    <header class="d-flex mt-3 mb-4">
+      <router-link class="ml-4" :to="{name:'home'}">בית</router-link>
+      <router-link  class="ml-4" :to="{name:'createUser'}">צור משתמש</router-link>
+      <router-link  class="ml-4" to="/rrrrr">לך לדף 404</router-link>
+    </header>
+        <router-view />
   </div>
 </template>
 
@@ -17,11 +22,6 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  text-align: right;
 }
 </style>

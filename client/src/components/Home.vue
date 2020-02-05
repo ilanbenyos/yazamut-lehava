@@ -14,9 +14,12 @@
       <div class="input-group-prepend">
         <button type="button" class="btn btn-primary" @click="checkItem()">בדוק מספר</button>
       </div>
-  </div>    
+  </div>
+  <br>
+      <button @click="saveUser()">saveUser!!!</button>
+<br>
     <Calendar v-model="date1" />
-date is : {{date1}}
+    date is : {{date1}}
   </div>
 </template>
 
@@ -33,6 +36,12 @@ export default {
       msg2:'initial value',
       item:null,
       date1: null,
+      userData:{
+        fName:'yoyo',
+        lName:'ben lulu',
+        age:12,
+        email:'yoyobenlulu@gmail.com'
+      }
     }
   },
   methods:{
@@ -41,28 +50,20 @@ export default {
         console.log('data',res.data);
         this.msg2 = res.data
     },
-        async checkItem(){
+    async checkItem(){
       let res = await axios.get('/is_valid/'+ this.item)
-        console.log(res.data);
-        this.msg2 = res.data.bool
+      console.log(res.data);
+      this.msg2 = res.data.bool
     },
-}
+    async saveUser(){
+      let res = await axios.post('/saveUser',this.userData)
+        console.log('userData',res.data);
+        this.userData = res;
+    },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

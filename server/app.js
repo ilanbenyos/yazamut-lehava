@@ -7,13 +7,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./modules/users/router');
 
 var app = express();
 var cors = require('cors');
-
+require('./plugins/mongoose');
 // use it before all route definitions
-app.use(cors({origin: 'http://localhost:8081'}));
+app.use(cors({origin: ['http://localhost:8081','http://localhost:8080']}));
 
 
 // view engine setup

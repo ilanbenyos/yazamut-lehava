@@ -4,9 +4,12 @@
  * Module dependencies.
  */
 
-require("@babel/register")({
-  presets: ["@babel/preset-env"]
-});
+require("babel-core/register");
+require("babel-polyfill");
+
+// require("@babel/register")({
+//   presets: ["@babel/preset-env"]
+// });
 
 
 var app = require('../app');

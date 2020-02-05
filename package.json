@@ -20,6 +20,7 @@
         "sass-loader": "^8.0.2"
     },
     "dependencies": {
+        "mongoose": "^5.8.11",
         "primeicons": "^2.0.0",
         "primevue": "^1.0.2"
     }

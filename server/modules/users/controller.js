@@ -6,11 +6,13 @@ export async function saveUser(userData) {
     try {
       let res
       if(userData._id){
-         await User.findByIdAndUpdate(userData._id, userData, options);
+         res = await User.findByIdAndUpdate(userData._id, userData, options);
       }else {
         res = new User(userData)
         await res.save();
       }
+      console.log('1111',res);
+      
     return res
   } catch (error) {
     console.error('saveUser', error);

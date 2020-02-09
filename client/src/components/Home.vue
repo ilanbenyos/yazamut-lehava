@@ -47,9 +47,12 @@ export default {
   },
   methods:{
     async send(){
+      this.$loader(true)
       let res = await axios.get()
-        console.log('data',res);
-        this.msg2 = res
+      console.log('data',res);
+      this.msg2 = res;
+      this.$loader(false)
+
     },
     async checkItem(){
       let res = await axios.get('/is_valid/'+ this.item)

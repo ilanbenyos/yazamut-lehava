@@ -9,22 +9,23 @@ export default new Vuex.Store({
   modules: {
   },
   state: {
-    userData: null,
+    isLoader: false,
 
   },
   getters: {
-    getUserData: state => {
-      return state.userData;
-    }
+
+    isLoader: state => {
+      return state.isLoader;
+    },
   },
   mutations: {
 
-    setUser(state, userData) {
-      state.userData = userData;
-      localStorage.setItem("userData", JSON.stringify(userData));
+    setLoader(state, bool) {
+      state.isLoader = bool;
     },
 
   },
   actions: {
+    
   }
 });

@@ -5,22 +5,26 @@
       <router-link  class="ml-4" :to="{name:'createUser'}">צור משתמש</router-link>
       <router-link  class="ml-4" to="/rrrrr">לך לדף 404</router-link>
     </header>
-        <router-view />
+    <router-view />
+    <ovarlayManager/>
   </div>
 </template>
 
 <script>
+import ovarlayManager from './components/overlayManager.vue'
 import homePage from './components/Home.vue'
 
 export default {
   name: 'app',
   components: {
-    homePage
+    homePage, ovarlayManager
   }
 }
 </script>
 
 <style>
+@import "./assets/styles/index.scss";
+
 #app {
   text-align: right;
 }

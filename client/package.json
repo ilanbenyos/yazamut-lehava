@@ -5,7 +5,9 @@
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "surge": "surge dist --domain https://yazamut-lehava.surge.sh",
+    "deploy": "npm run build && npm run surge"
   },
   "dependencies": {
     "axios": "^0.19.1",

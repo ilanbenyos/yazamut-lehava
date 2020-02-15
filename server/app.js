@@ -11,7 +11,7 @@ var app = express();
 var cors = require('cors');
 
 // use it before all route definitions
-app.use(cors({origin: 'http://localhost:8081'}));
+app.use(cors({origin: '*'}));
 
 
 // view engine setup

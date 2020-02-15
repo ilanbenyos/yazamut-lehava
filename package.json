@@ -6,7 +6,9 @@
         "server:install": "cd server && npm install",
         "client:install": "cd client/ && npm install",
         "client:start": "cd client/ && npm run start",
-        "server:start": "cd server/ && npm run start"
+        "server:start": "cd server/ && npm run start",
+        "client:deploy": "cd client && npm run deploy",
+        "server:deploy:copy that line to terminal and run": "git subtree push --prefix server heroku master"
     },
     "repository": {
         "type": "git"

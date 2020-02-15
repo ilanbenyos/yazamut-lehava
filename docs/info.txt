@@ -1,3 +1,1 @@
-here will come all info about the proj like:
-1. urls, usernames, passwords
-2. how to install and activate
+install instructions : https://docs.google.com/document/d/1Aukk75HqhIS5e3QuvmvgoghLv0Id0OWGNk7wvAE4Qu4/edit?usp=sharing

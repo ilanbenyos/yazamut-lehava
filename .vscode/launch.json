@@ -4,11 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
 			"type": "node",
 			"request": "launch",
 			"name": "server",
-			"program": "${workspaceFolder}\\server\\bin\\www",
+			"program": "${workspaceFolder}\\server\\bin\\server",
 			"cwd": "${workspaceFolder}/server",
 			"skipFiles": ["<node_internals>/**/*.js"]
 		},
@@ -20,6 +21,15 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\server\\routes\\users.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "startup",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server/bin/server.js"
         }
     ]
 }

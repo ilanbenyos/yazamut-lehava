@@ -1,6 +1,6 @@
 <template>
   <div class="home container">
-    <h1>{{ msg }}</h1>
+    <h1>ruth shtut</h1>
     
     <button @click="send()">send!!!</button>
 
@@ -52,7 +52,6 @@ export default {
       console.log('data',res);
       this.msg2 = res;
       this.$loader(false)
-
     },
     async checkItem(){
       let res = await axios.get('/is_valid/'+ this.item)

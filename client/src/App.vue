@@ -18,7 +18,7 @@ export default {
   name: 'app',
   components: {
     homePage, ovarlayManager
-  }
+  },
 }
 </script>
 

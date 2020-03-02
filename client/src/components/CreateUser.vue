@@ -17,15 +17,26 @@
       <input type="text" class="form-control" placeholder="מייל"  v-model="userData.email">
     </div>
     <div class="input-group mb-3">
-      <input type="number" class="form-control" placeholder="גיל" min="0" max="120" v-model="userData.age">
+      <input type="number" class="form-control" placeholder="יא נודניקית" min="0" max="120" v-model="userData.age">
     </div>
+    <div class="form-group mb-3">
+      <select class="form-control" v-model="userData.gender">
+        <option>male</option>
+        <option>female</option>
+        <option>other</option>
+
+      </select>
+    </div>
+
+
     <footer>
       <button @click="saveUser()">saveUser!!!</button>
     </footer>
   </div>
     
-    <br>
+    <br>==================
     {{userData}}
+    ==============
   </div>
 </template>
 
@@ -42,7 +53,8 @@ export default {
         fName:'',
         lName:'',
         age:null,
-        email:''
+        email:'',
+        gender:'female',
       }
     }
   },

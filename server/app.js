@@ -12,7 +12,7 @@ var usersRouter = require('./modules/users/router');
 var app = express();
 
 var cors = require('cors');
-require('../plugins/mongoose');
+require('./plugins/mongoose');
 // use it before all route definitions
 app.use(cors({origin: ['https://yazamut-lehava.surge.sh','http://localhost:8082','http://localhost:8081','http://localhost:8080','http://10.43.16.40:8080']}));
 

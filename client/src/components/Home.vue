@@ -1,6 +1,6 @@
 <template>
   <div class="home container">
-    <h1>ruth shtut</h1>
+    <h1>ZOHAR THE KING</h1>
     
     <button @click="send()">send!!!</button>
 
@@ -47,11 +47,14 @@ export default {
   },
   methods:{
     async send(){
-      this.$loader(true)
-      let res = await axios.get()
-      console.log('data',res);
-      this.msg2 = res;
-      this.$loader(false)
+      this.$loader(true);
+      try{
+        let res = await axios.get()
+        console.log('data',res);
+        this.msg2 = res;
+      }finally{
+        this.$loader(false)
+      }
     },
     async checkItem(){
       let res = await axios.get('/is_valid/'+ this.item)

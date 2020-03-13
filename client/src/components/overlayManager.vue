@@ -49,13 +49,13 @@ import Vue from "vue";
   }
   .fade-enter-active, .fade-leave-active {
     opacity: 0;
-              transition: opacity 3s;
+    transition: opacity .3s;
 
 
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: .5;
-              transition: opacity 3s;
+    transition: opacity .3s;
 
   }
 </style>

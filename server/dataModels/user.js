@@ -1,11 +1,11 @@
 import mongoose from 'mongoose'
 
 const User = new mongoose.Schema({
-  fName: { type: String },
-  lName: { type: String },
-  gender: { type: String },
-  email: { type: String },
-  age: { type: Number },
+  fName: { type: String },//"Hadar"
+  lName: { type: String },//"popo"
+  gender: { type: String },//"male"/ "female"/"other"
+  email: { type: String },//"yoyo"/"popo"/"momo"
+  age: { type: Number },//4/54/800
 });
 
 

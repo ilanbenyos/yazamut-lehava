@@ -1,6 +1,0 @@
-1. make your changes.
-2. in terminal: 
-3. git status. -> sea your changes in files.
-4. git add. -> add all changes to commit.
-5. git commit -m "your_commit_name" -> commit your changes.
-6. git status -> make sure you get 

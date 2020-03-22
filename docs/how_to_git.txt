@@ -6,10 +6,17 @@ how to make new branch?
 
 how to push to remote repo?
 
-1. make your changes.
+1. make your changes. make sure all saved at file/Save all !!.
 2. in terminal: 
 3. git status. -> sea your changes in files.
 4. git add. -> add all changes to commit.
 5. git commit -m "your_commit_name" -> commit your changes.
 6. git status -> make sure you get "nothing to commit, working tree clean" at the end of terminal text.
 7. git push -> push your changes to remote repository at github.
+
+how to merge to master:
+
+1. go to your_branch
+2. git pull origin master.
+3. hope you don't have conflicts...
+4. 

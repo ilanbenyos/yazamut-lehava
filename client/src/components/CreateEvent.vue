@@ -87,8 +87,11 @@ export default {
   },
   methods:{
     async saveEvent(){
-      let res = await axios.post('/saveEvent',this.eventData)
-        console.log('eventData',res.data);
+      let res = await axios.post('/events/saveEvent',this.eventData)
+        console.log('eventData',res);
+        res.startDate = new Date(res.startDate)
+        res.endDate = new Date(res.endDate)
+        res.reservationDate = new Date(res.reservationDate)
         this.eventData = res;
     },
   }

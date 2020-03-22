@@ -16,7 +16,10 @@ how to push to remote repo?
 
 how to merge to master:
 
-1. go to your_branch
+1. checkout to your_branch
 2. git pull origin master.
 3. hope you don't have conflicts...
-4. 
+4. git status.
+5. git push.
+
+do the same from master if you want to push into remote master on github.

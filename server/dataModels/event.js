@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const Event = new mongoose.Schema({
-  reservationDate: { type: Date },
+  reservationDate: { type: Date, default: Date.now },
   startDate: { type: Date },
   endDate: { type: Date },
   rooms: { type: [Number] },//[1,3,5,6]

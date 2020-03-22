@@ -60,7 +60,7 @@ export default {
   },
   methods:{
     async saveUser(){
-      let res = await axios.post('/saveUser',this.userData)
+      let res = await axios.post('/users/saveUser',this.userData);
         console.log('userData',res.data);
         this.userData = res;
     },

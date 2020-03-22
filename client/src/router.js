@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import HomePage from "./components/Home";
 import CreateUser from "./components/CreateUser";
+import CreateEvent from "./components/CreateEvent";
 import Page404 from "./components/page404";
 
 
@@ -22,6 +23,11 @@ const router = new Router({
         name: "createUser",
         component: CreateUser
     },
+    {
+      path: "/createEvent",
+      name: "createEvent",
+      component: CreateEvent
+  },
     {
       path: "*",
       name: "404",

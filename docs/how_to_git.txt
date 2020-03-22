@@ -23,3 +23,4 @@ how to merge to master:
 5. git push.
 
 do the same from master if you want to push into remote master on github.
+

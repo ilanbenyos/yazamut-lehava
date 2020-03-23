@@ -23,9 +23,15 @@ router.get('/:id', async (req, res, next)=> {
 router.post('/', async(req, res, next)=>{
   const report = req.body;
   console.log('report',report)
-  let newReport = await controller.saveReport(report)
+  let newReport = await controller.saveAppInventorReport(report)
   res.send(newReport);
 });
 
+router.post('/web', async(req, res, next)=>{
+  const report = req.body;
+  console.log('report',report)
+  let newReport = await controller.saveReport(report)
+  res.send(newReport);
+});
 
 module.exports = router;

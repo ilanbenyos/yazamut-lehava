@@ -74,7 +74,7 @@ export default {
       }
     },
     async saveReport(){
-      let res = await axios.post('/reports',this.reportData)
+      let res = await axios.post('/reports/web',this.reportData)
         console.log('reportData',res);
         res.startDate = new Date(res.startDate)
         res.endDate = new Date(res.endDate)

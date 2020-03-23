@@ -2,9 +2,6 @@
   <div class="create_report container">
     <h1>צור ארוע</h1>
     
-
-
-
   <div class="form my-4 d-flex flex-column ml-auto" style="width:250px">
     
     <div class="input-group mb-3">
@@ -51,7 +48,6 @@ export default {
   data(){
     return{
       reportData:{
-        reprotingDate: null,
         images:[],
         reporterId: '',
         reporterPhone: '',

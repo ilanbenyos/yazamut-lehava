@@ -9,6 +9,7 @@ const Report = new mongoose.Schema({
   lastName: { type: String },
   plateNumber: { type: String },
   reporterEmail: { type: String },
+  json: { type: String },
   comments: { type: String },
 });
 

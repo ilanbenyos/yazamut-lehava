@@ -20,7 +20,7 @@ router.get('/:id', async (req, res, next)=> {
   let report = await controller.getReportById(id)
   res.send(report);
 });
-router.post('/saveReport', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
   const report = req.body;
   console.log('report',report)
   let newReport = await controller.saveReport(report)

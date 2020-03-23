@@ -28,6 +28,7 @@ export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
   try {
     let newReport;
+    reportData.json = JSON.stringify(reportData)
     if(reportData._id){
       newReport = await Report.findByIdAndUpdate(reportData._id, reportData, options);
       console.log('report edited and saved:',newReport);

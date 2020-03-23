@@ -2,24 +2,20 @@
   <div class="home container">
     <h1>ZOHAR THE KING</h1>
     
-    <button @click="send()">send!!!</button>
+    <button @click="getAll()">getAll!!!</button>
 
     <div class="alert alert-primary" role="alert">
-        {{msg2}}
+        {{msg}}
     </div>
 
-  <div class="input-group my-4" style="width:250px">
+    <div class="input-group my-4" style="width:250px">
 
-    <input type="text" class="form-control" aria-label="Default" v-model="item">
-      <div class="input-group-prepend">
-        <button type="button" class="btn btn-primary" @click="checkItem()">בדוק מספר</button>
-      </div>
-  </div>
-  <br>
-      <button @click="saveUser()">saveUser!!!</button>
-<br>
-    <Calendar v-model="date1" />
-    date is : {{date1}}
+      <input type="text" class="form-control" aria-label="Default" v-model="plateNumber">
+        <div class="input-group-prepend">
+          <button type="button" class="btn btn-primary" @click="checkPlate()">בדוק מספר</button>
+        </div>
+    </div>
+    <br>
   </div>
 </template>
 
@@ -28,44 +24,29 @@ import axios from 'axios';
 
 export default {
   name: 'home',
-  props: {
-    msg: String,
-    default:'ברוכים הבאים לאתר יזמות אמית 2020'
-  },
   data(){
     return{
-      msg2:'initial value',
-      item:null,
-      date1: null,
-      userData:{
-        fName:'yoyo',
-        lName:'ben lulu',
-        age:12,
-        email:'yoyobenlulu@gmail.com'
-      }
+      plateNumber:null,
+      msg:'',
     }
   },
   methods:{
-    async send(){
+    async getAll(){
       this.$loader(true);
       try{
-        let res = await axios.get('/users')
-        console.log('data',res);
+        let res = await axios.get('/plates/getAll')
+        console.log('getAll:res',res);
         this.msg2 = res;
       }finally{
         this.$loader(false)
       }
     },
-    async checkItem(){
-      let res = await axios.get('/users/is_valid/'+ this.item)
+    async checkPlate(){
+      let res = await axios.get('/plates/is_valid/'+ this.plateNumber)
       console.log(res);
-      this.msg2 = res.bool
+      this.msg = res
     },
-    async saveUser(){
-      let res = await axios.post('/users/saveUser',this.userData)
-        console.log('userData',res);
-        this.userData = res;
-    },
+    
   }
 }
 </script>

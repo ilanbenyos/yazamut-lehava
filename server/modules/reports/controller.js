@@ -58,12 +58,12 @@ const parseReportFromAppInventor = (reportData)=>{
   let arr = Object.keys(reportData)[0];
   console.warn("arr 000000000",arr)
 
-  arr = arr.substring(0,arr.length-2).substring(1).split(', ');
+  arr = arr.split(',');
   console.warn("arr 11111111111",arr)
 
-  arr = arr.map(i=> {
-    return i.substring(0,i.length-1).substring(1)
-  });
+  // arr = arr.map(i=> {
+  //   return i.substring(0,i.length-1).substring(1)
+  // });
   console.warn("arr 2222222222",arr)
 
     // const o = {

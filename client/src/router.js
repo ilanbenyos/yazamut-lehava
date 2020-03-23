@@ -3,6 +3,7 @@ import Router from "vue-router";
 import HomePage from "./components/Home";
 import CreateUser from "./components/CreateUser";
 import CreateEvent from "./components/CreateEvent";
+import CreateReport from "./components/CreateReport";
 import Page404 from "./components/page404";
 
 
@@ -19,10 +20,15 @@ const router = new Router({
         component: HomePage
     },
     {
-        path: "/createUser",
-        name: "createUser",
-        component: CreateUser
+        path: "/createReport",
+        name: "createReport",
+        component: CreateReport
     },
+    {
+      path: "/createUser",
+      name: "createUser",
+      component: CreateUser
+  },
     {
       path: "/createEvent",
       name: "createEvent",

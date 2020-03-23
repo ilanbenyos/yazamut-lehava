@@ -27,7 +27,7 @@ export async function deleteReportById(id) {
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
   console.warn("reportData1111111111111",reportData)
-  let o =this.parseReportFromAppInventor(reportData)
+  let o = parseReportFromAppInventor(reportData)
   
   try {
     let newReport;

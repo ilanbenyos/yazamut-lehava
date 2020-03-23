@@ -34,13 +34,13 @@ export async function saveReport(reportData) {
   });
 
     const o = {
-      reporterId: arr[0],
-      reporterPhone: arr[0],
-      firstName: arr[0],
-      lastName: arr[0],
-      plateNumber: arr[0],
-      reporterEmail: arr[0],
-      comments: arr[0],
+      reporterId: arr[1],
+      reporterPhone: arr[2],
+      firstName: arr[3],
+      lastName: arr[4],
+      plateNumber: arr[5],
+      reporterEmail: arr[6],
+      comments: arr[7],
       json: JSON.stringify(reportData)
     }
 

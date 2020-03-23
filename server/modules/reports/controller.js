@@ -26,7 +26,6 @@ export async function deleteReportById(id) {
 
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
-  console.warn("reportData 1111111111111",reportData)
 
   if(typeof(reportData) !=="object"){
     reportData = parseReportFromAppInventor(reportData)
@@ -40,7 +39,7 @@ export async function saveReport(reportData) {
       console.log('report edited and saved:',newReport);
 
     }else {
-      const preSaved = new Report(newReport)
+      const preSaved = new Report(reportData)
       newReport = await preSaved.save();
       console.log('newReport saved:',newReport);
     }
@@ -54,11 +53,18 @@ export async function saveReport(reportData) {
 }
 
 const parseReportFromAppInventor = (reportData)=>{
+  console.warn("reportData 1111111111111",reportData)
+
   let arr = Object.keys(reportData)[0];
+  console.warn("arr 000000000",arr)
+
   arr = arr.substring(0,arr.length-2).substring(1).split(', ');
+  console.warn("arr 11111111111",arr)
+
   arr = arr.map(i=> {
     return i.substring(0,i.length-1).substring(1)
   });
+  console.warn("arr 2222222222",arr)
 
     const o = {
       reporterId: arr[0],

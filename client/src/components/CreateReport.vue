@@ -30,6 +30,7 @@
 
     <footer>
       <button @click="saveReport()">שמור אותי!!!</button>
+      <button @click="initReport()">initReport</button>
     </footer>
   </div>
     
@@ -60,6 +61,18 @@ export default {
     }
   },
   methods:{
+    initReport(){
+      this.reportData={
+        images:[],
+        reporterId: '',
+        reporterPhone: '',
+        firstName: '',
+        lastName: '',
+        plateNumber:'',
+        reporterEmail: '',
+        comments: '',
+      }
+    },
     async saveReport(){
       let res = await axios.post('/reports',this.reportData)
         console.log('reportData',res);

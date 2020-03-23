@@ -37,7 +37,7 @@ seed app for students projects. contains:
 
 
 ## download and install project:
- 1. at console, write : `git clone https://github.com/ilanbenyos/yazamut-lehava.git`
+ 1. at console, write : `git clone https://github.com/ilanbenyos/park-watch.git`
  2. type: `npm run install:all`.
  3. at right side of terminal press Split terminal button (between + and delete)
  4. on the left side type: `npm run server:start`. should be “app listen on port:  3000”

@@ -6,7 +6,7 @@
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "surge": "surge dist --domain https://yazamut-lehava.surge.sh",
+    "surge": "surge dist --domain https://park-watch.surge.sh",
     "deploy": "npm run build && npm run surge"
   },
   "dependencies": {

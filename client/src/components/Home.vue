@@ -1,6 +1,6 @@
 <template>
   <div class="home container">
-    <h1>ZOHAR THE KING</h1>
+    <h1>The Shmerlings</h1>
     
     <button @click="getAll()">getAll!!!</button>
 
@@ -16,6 +16,7 @@
         </div>
     </div>
     <br>
+
   </div>
 </template>
 
@@ -36,7 +37,9 @@ export default {
       try{
         let res = await axios.get('/plates/getAll')
         console.log('getAll:res',res);
-        this.msg2 = res;
+        this.msg = res;
+        this.$toast.add({severity:'success', summary: 'התקבלו נתוני רישוי', detail:'got them', life: 2000});
+
       }finally{
         this.$loader(false)
       }

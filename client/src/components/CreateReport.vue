@@ -1,6 +1,6 @@
 <template>
   <div class="create_report container">
-    <h1>צור ארוע</h1>
+    <h1>צור דיווח</h1>
     
   <div class="form my-4 d-flex flex-column ml-auto" style="width:250px">
     
@@ -80,6 +80,8 @@ export default {
         res.endDate = new Date(res.endDate)
         res.reservationDate = new Date(res.reservationDate)
         this.reportData = res;
+        this.$toast.add({severity:'success', summary: 'דוח נשלח בהצלחה', detail:'ניצור איתך קשר אולי וכנראה שלא', life: 2000});
+
     },
   }
 }

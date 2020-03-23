@@ -7,6 +7,8 @@
             </div>
           </div>
         </transition>
+            <Toast position="topright" />
+
     </div>
 </template>
 

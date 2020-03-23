@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 // var express = require('express');
 import express from 'express'
+import * as controller from './modules/plates/controller'
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/plates', platesRouter);
 app.use('/reports', reportsRouter);
+controller.getAll();
 // catch 404 and forward to error handler9
 app.use(function(req, res, next) {
   next(createError(404));

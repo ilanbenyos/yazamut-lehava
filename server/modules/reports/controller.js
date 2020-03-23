@@ -26,16 +26,37 @@ export async function deleteReportById(id) {
 
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
-  console.warn("reportData",reportData)
+  console.warn("reportData1111111111111",reportData)
+  let arr = Object.keys(reportData);
+  arr = arr.substring(0,arr.length-2).substring(1).split(', ');
+  arr = arr.map(i=> {
+    return i.substring(0,i.length-1).substring(1)
+  });
+
+    const o = {
+      reporterId: arr[0],
+      reporterPhone: arr[0],
+      firstName: arr[0],
+      lastName: arr[0],
+      plateNumber: arr[0],
+      reporterEmail: arr[0],
+      comments: arr[0],
+      json: JSON.stringify(reportData)
+    }
+
+    console.warn("reportData after parsing:",o)
+
+
+
   try {
     let newReport;
-    reportData.json = JSON.stringify(reportData)
+    reportData.json = JSON.stringify(o)
     if(reportData._id){
       newReport = await Report.findByIdAndUpdate(reportData._id, reportData, options);
       console.log('report edited and saved:',newReport);
 
     }else {
-      const preSaved = new Report(reportData)
+      const preSaved = new Report(o)
       newReport = await preSaved.save();
       console.log('newReport saved:',newReport);
     }

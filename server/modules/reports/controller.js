@@ -26,18 +26,21 @@ export async function deleteReportById(id) {
 
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
-  console.warn("reportData1111111111111",reportData)
-  let o = parseReportFromAppInventor(reportData)
+  console.warn("reportData 1111111111111",reportData)
+
+  if(typeof(reportData) !=="object"){
+    reportData = parseReportFromAppInventor(reportData)
+  }
   
   try {
     let newReport;
-    reportData.json = JSON.stringify(o)
+    reportData.json = JSON.stringify(reportData)
     if(reportData._id){
       newReport = await Report.findByIdAndUpdate(reportData._id, reportData, options);
       console.log('report edited and saved:',newReport);
 
     }else {
-      const preSaved = new Report(o)
+      const preSaved = new Report(newReport)
       newReport = await preSaved.save();
       console.log('newReport saved:',newReport);
     }
@@ -58,13 +61,13 @@ const parseReportFromAppInventor = (reportData)=>{
   });
 
     const o = {
-      reporterId: arr[1],
-      reporterPhone: arr[2],
-      firstName: arr[3],
-      lastName: arr[4],
-      plateNumber: arr[5],
-      reporterEmail: arr[6],
-      comments: arr[7],
+      reporterId: arr[0],
+      reporterPhone: arr[1],
+      firstName: arr[2],
+      lastName: arr[3],
+      plateNumber: arr[4],
+      reporterEmail: arr[5],
+      comments: arr[6],
       json: JSON.stringify(reportData)
     }
 

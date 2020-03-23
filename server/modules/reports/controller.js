@@ -27,9 +27,9 @@ export async function deleteReportById(id) {
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
-  if(typeof(reportData) !=="object"){
+  // if(typeof(reportData) !=="object"){
     reportData = parseReportFromAppInventor(reportData)
-  }
+  // }
   
   try {
     let newReport;
@@ -66,17 +66,23 @@ const parseReportFromAppInventor = (reportData)=>{
   });
   console.warn("arr 2222222222",arr)
 
-    const o = {
-      reporterId: arr[0],
-      reporterPhone: arr[1],
-      firstName: arr[2],
-      lastName: arr[3],
-      plateNumber: arr[4],
-      reporterEmail: arr[5],
-      comments: arr[6],
-      json: JSON.stringify(reportData)
-    }
-
+    // const o = {
+    //   reporterId: arr[0],
+    //   reporterPhone: arr[1],
+    //   firstName: arr[2],
+    //   lastName: arr[3],
+    //   plateNumber: arr[4],
+    //   reporterEmail: arr[5],
+    //   comments: arr[6],
+    //   json: JSON.stringify(reportData)
+    // }
+    const o = {}
+    arr.forEach(i => {
+      let entry = i.split(':')
+      const key = entry[0].trim();
+      const val = entry[1].trim()
+      o[key]= val
+    });
     console.warn("reportData after parsing:",o)
     return o;
 }

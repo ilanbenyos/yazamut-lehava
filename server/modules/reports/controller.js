@@ -26,6 +26,7 @@ export async function deleteReportById(id) {
 
 export async function saveReport(reportData) {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
+  console.warn("reportData",reportData)
   try {
     let newReport;
     reportData.json = JSON.stringify(reportData)

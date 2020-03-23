@@ -61,7 +61,7 @@ export default {
   },
   methods:{
     async saveReport(){
-      let res = await axios.post('/reports/saveReport',this.reportData)
+      let res = await axios.post('/reports',this.reportData)
         console.log('reportData',res);
         res.startDate = new Date(res.startDate)
         res.endDate = new Date(res.endDate)

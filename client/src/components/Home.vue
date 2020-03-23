@@ -49,7 +49,7 @@ export default {
     async send(){
       this.$loader(true);
       try{
-        let res = await axios.get()
+        let res = await axios.get('/users')
         console.log('data',res);
         this.msg2 = res;
       }finally{
@@ -57,12 +57,12 @@ export default {
       }
     },
     async checkItem(){
-      let res = await axios.get('/is_valid/'+ this.item)
+      let res = await axios.get('/users/is_valid/'+ this.item)
       console.log(res);
       this.msg2 = res.bool
     },
     async saveUser(){
-      let res = await axios.post('/saveUser',this.userData)
+      let res = await axios.post('/users/saveUser',this.userData)
         console.log('userData',res);
         this.userData = res;
     },

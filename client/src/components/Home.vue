@@ -4,9 +4,9 @@
     
     <button @click="getAll()">getAll!!!</button>
 
-    <div class="alert alert-primary" role="alert">
-        {{msg}}
-    </div>
+    <div class="alert alert-primary" role="alert">example plates: {{examplePlates}}</div>
+    <br>
+    <div class="alert" :class="isValid? 'alert-primary': 'alert-danger'" role="alert">is valid: {{isValid}}</div>
 
     <div class="input-group my-4" style="width:250px">
 
@@ -28,16 +28,17 @@ export default {
   data(){
     return{
       plateNumber:null,
-      msg:'',
+      examplePlates:'',
+      isValid:'',
     }
   },
   methods:{
     async getAll(){
       this.$loader(true);
       try{
-        let res = await axios.get('/plates/getAll')
-        console.log('getAll:res',res);
-        this.msg = res;
+        let {firstPlates:examplePlates} = await axios.get('/plates/getAll')
+        console.log('getAll:res',examplePlates);
+        this.examplePlates = examplePlates;
         this.$toast.add({severity:'success', summary: 'התקבלו נתוני רישוי', detail:'got them', life: 2000});
 
       }finally{
@@ -45,9 +46,9 @@ export default {
       }
     },
     async checkPlate(){
-      let res = await axios.get('/plates/is_valid/'+ this.plateNumber)
-      console.log(res);
-      this.msg = res
+      let isValid = await axios.get('/plates/is_valid/'+ this.plateNumber)
+      console.log(isValid);
+      this.isValid = isValid
     },
     
   }

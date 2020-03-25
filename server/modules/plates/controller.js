@@ -32,7 +32,7 @@ export async function is_valid(plateNumber) {
 
   } catch (error) {
     console.error('is_valid', error);
-    throw error
+    throw {message:error}
 
   }
 }

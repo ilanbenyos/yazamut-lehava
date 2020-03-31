@@ -1,20 +1,21 @@
 var createError = require('http-errors');
 // var express = require('express');
 import express from 'express'
-import * as controller from './modules/plates/controller'
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var platesRouter = require('./modules/plates/router');
-var reportsRouter = require('./modules/reports/router');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./modules/users/router');
+var eventsRouter = require('./modules/events/router');
 
 var app = express();
 
 var cors = require('cors');
 require('./plugins/mongoose');
 // use it before all route definitions
-app.use(cors({origin: ['https://park-watch.surge.sh','http://localhost:8082','http://localhost:8081','http://localhost:8080','https://localhost:8080','http://10.43.16.40:8080']}));
+app.use(cors({origin: ['https://yazamut-lehava.surge.sh','http://localhost:8082','http://localhost:8081','http://localhost:8080','https://localhost:8080','http://10.43.16.40:8080']}));
 
 
 // view engine setup
@@ -27,9 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/plates', platesRouter);
-app.use('/reports', reportsRouter);
-controller.getAll();
+app.use('/home', indexRouter);
+app.use('/users', usersRouter);
+app.use('/events', eventsRouter);
+
 // catch 404 and forward to error handler9
 app.use(function(req, res, next) {
   next(createError(404));
@@ -48,4 +50,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
